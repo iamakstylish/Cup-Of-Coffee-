@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Cup Of Coffee - Orders
+</title>
+
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+
+body{
+
+margin:0;
+
+font-family:Arial,sans-serif;
+
+background:#f5f5f5;
+
+color:#222;
+
+}
+
+
+header{
+
+background:#3b2114;
+
+color:white;
+
+padding:20px;
+
+text-align:center;
+
+position:sticky;
+
+top:0;
+
+z-index:10;
+
+}
+
+
+header h1{
+
+margin:0;
+
+font-size:23px;
+
+}
+
+
+main{
+
+max-width:900px;
+
+margin:auto;
+
+padding:16px;
+
+}
+
+
+.status{
+
+padding:12px;
+
+background:#e9f7e9;
+
+border-radius:10px;
+
+margin-bottom:15px;
+
+}
+
+
+.order{
+
+background:white;
+
+border-radius:14px;
+
+padding:17px;
+
+margin:13px 0;
+
+box-shadow:
+0 2px 10px
+rgba(0,0,0,.08);
+
+}
+
+
+.new{
+
+border-left:
+6px solid #e67e22;
+
+}
+
+
+.order-header{
+
+display:flex;
+
+justify-content:
+space-between;
+
+gap:10px;
+
+flex-wrap:wrap;
+
+}
+
+
+.order-header h2{
+
+margin:0;
+
+}
+
+
+.customer{
+
+line-height:1.6;
+
+color:#555;
+
+}
+
+
+.item{
+
+padding:8px 0;
+
+border-bottom:
+1px solid #eee;
+
+}
+
+
+.total{
+
+font-size:19px;
+
+font-weight:bold;
+
+margin-top:12px;
+
+}
+
+
+button{
+
+border:none;
+
+border-radius:8px;
+
+padding:10px 14px;
+
+margin:5px;
+
+background:#6f3e21;
+
+color:white;
+
+font-weight:bold;
+
+}
+
+
+.ready{
+
+background:#27733c;
+
+}
+
+
+.reject{
+
+background:#a62d2d;
+
+}
+
+
+.empty{
+
+text-align:center;
+
+padding:30px;
+
+background:white;
+
+border-radius:12px;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>
+☕ Cup Of Coffee
+</h1>
+
+<p>
+Order Dashboard
+</p>
+
+</header>
+
+
+<main>
+
+
+<div
+id="connectionStatus"
+class="status"
+>
+
+Connecting...
+
+</div>
+
+
+<div
+id="orders"
+></div>
+
+
+</main>
+
+
+<script type="module">
+
+
+import {
+initializeApp
+}
+
+from
+"https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+
+
+import {
+
+getFirestore,
+
+collection,
+
+query,
+
+orderBy,
+
+onSnapshot,
+
+doc,
+
+updateDoc
+
+}
+
+from
+
+"https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
+
+
+
+/* =========================
+   FIREBASE CONFIG
+========================= */
+
+
+const firebaseConfig = {
+
+apiKey:
+"AIzaSyDuVWMltJCpPnW_RGWBnQZTXE_MtTy1sgs",
+
+authDomain:
+"cup-of-coffee-89146.firebaseapp.com",
+
+projectId:
+"cup-of-coffee-89146",
+
+storageBucket:
+"cup-of-coffee-89146.firebasestorage.app",
+
+messagingSenderId:
+"67162654268",
+
+appId:
+"1:67162654268:web:026929bf6dceb1f8156539",
+
+measurementId:
+"G-GHX74EQYLV"
+
+};
+
+
+const app =
+initializeApp(firebaseConfig);
+
+
+const db =
+getFirestore(app);
+
+
+
+/* =========================
+   REAL TIME ORDERS
+========================= */
+
+
+const ordersContainer =
+document.getElementById(
+"orders"
+);
+
+
+const statusBox =
+document.getElementById(
+"connectionStatus"
+);
+
+
+const ordersQuery =
+query(
+
+collection(
+db,
+"orders"
+),
+
+orderBy(
+"createdAt",
+"desc"
+)
+
+);
+
+
+
+onSnapshot(
+
+ordersQuery,
+
+snapshot => {
+
+
+statusBox.textContent =
+"🟢 Live — "
++
+snapshot.size
++
+" order(s)";
+
+
+ordersContainer.innerHTML =
+"";
+
+
+if(snapshot.empty){
+
+ordersContainer.innerHTML = `
+
+<div class="empty">
+
+<h2>
+No orders yet
+</h2>
+
+<p>
+Customer ka order aate hi yahan dikhega.
+</p>
+
+</div>
+
+`;
+
+return;
+
+}
+
+
+
+snapshot.forEach(
+documentSnapshot => {
+
+
+const order =
+documentSnapshot.data();
+
+
+const orderId =
+documentSnapshot.id;
+
+
+const orderBox =
+document.createElement(
+"div"
+);
+
+
+if(
+order.status === "NEW"
+){
+
+orderBox.className =
+"order new";
+
+}else{
+
+orderBox.className =
+"order";
+
+}
+
+
+
+let itemsHTML = "";
+
+
+(order.items || [])
+.forEach(item => {
+
+
+itemsHTML += `
+
+<div class="item">
+
+${item.name}
+
+×
+
+${item.quantity}
+
+—
+
+₹${item.price * item.quantity}
+
+</div>
+
+`;
+
+});
+
+
+
+orderBox.innerHTML = `
+
+<div
+class="order-header"
+>
+
+<h2>
+
+Order #
+
+${orderId
+.slice(-6)
+.toUpperCase()}
+
+</h2>
+
+
+<strong>
+
+${order.status || "NEW"}
+
+</strong>
+
+</div>
+
+
+<hr>
+
+
+<div
+class="customer"
+>
+
+<b>
+Customer:
+</b>
+
+${order.customer?.name || ""}
+
+<br>
+
+
+<b>
+Mobile:
+</b>
+
+${order.customer?.phone || ""}
+
+<br>
+
+
+<b>
+Address:
+</b>
+
+${order.customer?.address || ""}
+
+</div>
+
+
+<h3>
+Items
+</h3>
+
+
+${itemsHTML}
+
+
+<div class="total">
+
+Total:
+
+₹${order.total || 0}
+
+</div>
+
+
+<div>
+
+
+<button
+onclick="
+changeStatus(
+'${orderId}',
+'ACCEPTED'
+)
+"
+>
+
+ACCEPT
+
+</button>
+
+
+<button
+class="ready"
+onclick="
+changeStatus(
+'${orderId}',
+'READY'
+)
+"
+>
+
+READY
+
+</button>
+
+
+<button
+class="reject"
+onclick="
+changeStatus(
+'${orderId}',
+'REJECTED'
+)
+"
+>
+
+REJECT
+
+</button>
+
+
+</div>
+
+`;
+
+
+ordersContainer
+.appendChild(
+orderBox
+);
+
+
+});
+
+
+
+},
+
+error => {
+
+
+console.error(error);
+
+
+statusBox.textContent =
+"❌ Firebase error: "
++
+error.message;
+
+
+}
+
+);
+
+
+
+/* =========================
+   UPDATE ORDER STATUS
+========================= */
+
+
+window.changeStatus =
+async function(
+orderId,
+newStatus
+){
+
+
+try{
+
+
+await updateDoc(
+
+doc(
+db,
+"orders",
+orderId
+),
+
+{
+
+status:newStatus
+
+}
+
+);
+
+
+}catch(error){
+
+alert(
+"Status update nahi hua: "
++
+error.message
+);
+
+}
+
+
+};
+
+
+</script>
+
+
+</body>
+
+</html>
