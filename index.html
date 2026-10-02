@@ -3,260 +3,143 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cup Of Coffee | Order Online</title>
+
+<title>Cup Of Coffee - Order Online</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+    box-sizing:border-box;
+}
 
 body{
-  font-family:Arial,sans-serif;
-  background:#f5faf7;
-  color:#17251d;
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f7f3ee;
+    color:#24170f;
 }
 
 header{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:white;
-  padding:15px 18px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  box-shadow:0 2px 12px #0002;
+    background:#3b2114;
+    color:white;
+    padding:20px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:10;
 }
 
-.logo{
-  font-size:21px;
-  font-weight:800;
+header h1{
+    margin:0;
+    font-size:25px;
 }
 
-.cartBtn{
-  background:#174f3b;
-  color:white;
-  border:0;
-  padding:11px 16px;
-  border-radius:25px;
-  font-weight:bold;
+header p{
+    margin:6px 0 0;
 }
 
-.hero{
-  padding:50px 20px;
-  text-align:center;
-  background:linear-gradient(135deg,#dff3e7,#e9f4ff);
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:18px;
 }
 
-.hero h1{
-  font-size:38px;
-  margin-bottom:10px;
-}
-
-.hero p{
-  color:#53635a;
-  line-height:1.5;
-}
-
-.orderNow{
-  margin-top:20px;
-  padding:14px 26px;
-  border:0;
-  border-radius:28px;
-  background:#174f3b;
-  color:white;
-  font-size:16px;
-  font-weight:bold;
-}
-
-section{
-  max-width:950px;
-  margin:auto;
-  padding:30px 18px;
-}
-
-h2{
-  text-align:center;
-  margin-bottom:22px;
-}
-
-.categories{
-  display:flex;
-  gap:9px;
-  overflow-x:auto;
-  padding-bottom:18px;
-}
-
-.categories button{
-  white-space:nowrap;
-  padding:9px 15px;
-  border-radius:20px;
-  border:1px solid #174f3b;
-  background:white;
-  color:#174f3b;
-}
-
-.menu{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:16px;
+.category{
+    font-size:22px;
+    margin-top:25px;
 }
 
 .item{
-  background:white;
-  padding:18px;
-  border-radius:18px;
-  box-shadow:0 3px 14px #0001;
+    background:white;
+    border-radius:14px;
+    padding:15px;
+    margin:12px 0;
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    box-shadow:0 2px 10px #00000012;
 }
 
 .item h3{
-  margin-bottom:8px;
+    margin:0 0 6px;
 }
 
 .item p{
-  font-size:14px;
-  color:#66736b;
-  min-height:38px;
+    margin:0;
+    color:#666;
+    font-size:14px;
 }
 
 .price{
-  font-size:19px;
-  font-weight:bold;
-  margin:13px 0;
+    font-weight:bold;
+    margin-top:8px;
 }
 
-.add{
-  width:100%;
-  padding:11px;
-  border:0;
-  border-radius:10px;
-  background:#174f3b;
-  color:white;
-  font-weight:bold;
+button{
+    border:none;
+    border-radius:9px;
+    padding:10px 15px;
+    background:#6f3e21;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:active{
+    transform:scale(.97);
 }
 
 .cart{
-  display:none;
-  max-width:650px;
-  margin:25px auto;
-  padding:22px;
-  background:white;
-  border-radius:18px;
-  box-shadow:0 3px 15px #0002;
+    background:white;
+    border-radius:14px;
+    padding:18px;
+    margin-top:25px;
+    box-shadow:0 2px 10px #00000012;
 }
 
-.cart h2{
-  text-align:left;
+.cart-row{
+    display:flex;
+    justify-content:space-between;
+    padding:10px 0;
+    border-bottom:1px solid #eee;
 }
 
-.cartItem{
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  padding:12px 0;
-  border-bottom:1px solid #ddd;
-}
-
-.qty button{
-  border:0;
-  background:#e7f0eb;
-  padding:5px 9px;
-  border-radius:6px;
+input,
+textarea{
+    width:100%;
+    padding:13px;
+    margin:7px 0;
+    border:1px solid #ddd;
+    border-radius:9px;
+    font-size:15px;
 }
 
 .total{
-  font-size:21px;
-  font-weight:bold;
-  margin:20px 0;
+    font-size:20px;
+    font-weight:bold;
+    padding:15px 0;
 }
 
-input,textarea{
-  width:100%;
-  padding:13px;
-  margin:7px 0;
-  border:1px solid #ccc;
-  border-radius:9px;
-  font-size:15px;
+.order-btn{
+    width:100%;
+    font-size:17px;
+    padding:14px;
 }
 
-.locationBtn{
-  width:100%;
-  padding:13px;
-  border:0;
-  border-radius:10px;
-  background:#315c9b;
-  color:white;
-  font-weight:bold;
-  margin:7px 0;
+#message{
+    display:none;
+    padding:12px;
+    margin-top:12px;
+    border-radius:9px;
 }
 
-.locationStatus{
-  font-size:13px;
-  margin:5px 0 12px;
-  color:#53635a;
+.success{
+    background:#e7f7e7;
+    color:#185b18;
 }
 
-.paymentBox{
-  background:#f2f7f4;
-  padding:15px;
-  border-radius:12px;
-  margin-top:15px;
-}
-
-.paymentBox label{
-  display:block;
-  margin:12px 0;
-}
-
-.paymentBox input{
-  width:auto;
-  margin-right:8px;
-}
-
-.payBtn{
-  width:100%;
-  padding:14px;
-  border:0;
-  border-radius:10px;
-  background:#16804b;
-  color:white;
-  font-weight:bold;
-  margin-top:10px;
-}
-
-.whatsapp{
-  width:100%;
-  padding:15px;
-  border:0;
-  border-radius:10px;
-  background:#25d366;
-  color:white;
-  font-size:17px;
-  font-weight:bold;
-  margin-top:12px;
-}
-
-.note{
-  font-size:12px;
-  color:#66736b;
-  margin-top:8px;
-  line-height:1.5;
-}
-
-footer{
-  margin-top:30px;
-  background:#174f3b;
-  color:white;
-  text-align:center;
-  padding:30px 15px;
-}
-
-footer p{
-  margin-top:7px;
-}
-
-@media(max-width:500px){
-  .hero h1{
-    font-size:32px;
-  }
+.error{
+    background:#ffe8e8;
+    color:#8a1f1f;
 }
 </style>
 </head>
@@ -264,816 +147,567 @@ footer p{
 <body>
 
 <header>
-
-<div class="logo">
-☕ Cup Of Coffee
-</div>
-
-<button class="cartBtn" onclick="showCart()">
-🛒 Cart (<span id="count">0</span>)
-</button>
-
+    <h1>☕ Cup Of Coffee</h1>
+    <p>Order Online</p>
 </header>
 
+<div class="container">
 
-<div class="hero">
+    <div id="menu"></div>
 
-<h1>Cup Of Coffee</h1>
+    <div class="cart">
 
-<p>Fresh food • Good coffee • Good vibes</p>
+        <h2>🛒 Your Cart</h2>
 
-<p>📍 Raja Park, Jaipur</p>
+        <div id="cartItems">
+            Cart is empty.
+        </div>
 
-<button class="orderNow"
-onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">
-Order Now
-</button>
+        <div class="total">
+            Total: ₹<span id="total">0</span>
+        </div>
 
-</div>
+        <h2>Customer Details</h2>
 
+        <input
+            id="name"
+            type="text"
+            placeholder="Your Name"
+        >
 
-<section id="menu">
+        <input
+            id="phone"
+            type="tel"
+            placeholder="Mobile Number"
+        >
 
-<h2>Our Menu</h2>
+        <textarea
+            id="address"
+            rows="3"
+            placeholder="Delivery Address"
+        ></textarea>
 
-<div class="categories">
+        <button
+            class="order-btn"
+            id="placeOrder"
+        >
+            Place Order
+        </button>
 
-<button>All</button>
-<button>Pizza</button>
-<button>Burger</button>
-<button>Sandwich</button>
-<button>Maggi</button>
-<button>Drinks</button>
+        <div id="message"></div>
 
-</div>
-
-
-<div class="menu">
-
-
-<div class="item">
-
-<h3>🍔 Aloo Tikki Burger</h3>
-
-<p>Crispy aloo tikki burger with fresh vegetables and sauces.</p>
-
-<div class="price">₹79</div>
-
-<button class="add"
-onclick="addItem('Aloo Tikki Burger',79)">
-Add to Cart
-</button>
+    </div>
 
 </div>
 
 
-<div class="item">
-
-<h3>🥪 Veg Grilled Sandwich</h3>
-
-<p>Grilled sandwich with fresh vegetables and sauces.</p>
-
-<div class="price">₹89</div>
-
-<button class="add"
-onclick="addItem('Veg Grilled Sandwich',89)">
-Add to Cart
-</button>
-
-</div>
-
-
-<div class="item">
-
-<h3>🥪 Veg Cheese Sandwich</h3>
-
-<p>Grilled vegetable sandwich with melted cheese.</p>
-
-<div class="price">₹109</div>
-
-<button class="add"
-onclick="addItem('Veg Cheese Sandwich',109)">
-Add to Cart
-</button>
-
-</div>
-
-
-<div class="item">
-
-<h3>🥪 Peri Peri Sandwich</h3>
-
-<p>Spicy peri peri sandwich with fresh vegetables.</p>
-
-<div class="price">₹99</div>
-
-<button class="add"
-onclick="addItem('Peri Peri Sandwich',99)">
-Add to Cart
-</button>
-
-</div>
-
-
-<div class="item">
-
-<h3>🍜 Plain Maggi</h3>
-
-<p>Classic hot and tasty Maggi.</p>
-
-<div class="price">₹79</div>
-
-<button class="add"
-onclick="addItem('Plain Maggi',79)">
-Add to Cart
-</button>
-
-</div>
-
-
-<div class="item">
-
-<h3>🍜 Vegetable Maggi</h3>
-
-<p>Maggi with fresh vegetables and spices.</p>
-
-<div class="price">₹89</div>
-
-<button class="add"
-onclick="addItem('Vegetable Maggi',89)">
-Add to Cart
-</button>
-
-</div>
-
-
-<div class="item">
-
-<h3>🧀 Cheese Maggi</h3>
-
-<p>Creamy cheesy Maggi loaded with cheese.</p>
-
-<div class="price">₹109</div>
-
-<button class="add"
-onclick="addItem('Cheese Maggi',109)">
-Add to Cart
-</button>
-
-</div>
-
-
-<div class="item">
-
-<h3>🥤 Cold Coffee</h3>
-
-<p>Chilled creamy cafe-style cold coffee.</p>
-
-<div class="price">₹99</div>
-
-<button class="add"
-onclick="addItem('Cold Coffee',99)">
-Add to Cart
-</button>
-
-</div>
-
-
-<div class="item">
-
-<h3>🥤 Iced Latte</h3>
-
-<p>Refreshing chilled iced latte.</p>
-
-<div class="price">₹109</div>
-
-<button class="add"
-onclick="addItem('Iced Latte',109)">
-Add to Cart
-</button>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<div class="cart" id="cart">
-
-<h2>🛒 Your Cart</h2>
-
-<div id="cartItems"></div>
-
-<div class="total">
-Total: ₹<span id="total">0</span>
-</div>
-
-
-<h3>Delivery Details</h3>
-
-
-<input
-id="customerName"
-placeholder="Your Name">
-
-
-<input
-id="customerPhone"
-placeholder="Mobile Number"
-type="tel">
-
-
-<textarea
-id="customerAddress"
-rows="3"
-placeholder="Full Delivery Address"></textarea>
-
-
-<input
-id="customerLandmark"
-placeholder="Landmark">
-
-
-<button
-class="locationBtn"
-onclick="getLocation()">
-
-📍 Use My Current Location
-
-</button>
-
-
-<div
-class="locationStatus"
-id="locationStatus">
-
-Location not added
-
-</div>
-
-
-<div class="paymentBox">
-
-<h3>💳 Payment Method</h3>
-
-
-<label>
-
-<input
-type="radio"
-name="payment"
-value="UPI"
-checked>
-
-Online UPI Payment
-
-</label>
-
-
-<label>
-
-<input
-type="radio"
-name="payment"
-value="COD">
-
-Cash on Delivery
-
-</label>
-
-
-<button
-class="payBtn"
-onclick="payUPI()">
-
-💳 Pay Online with UPI
-
-</button>
-
-
-<p class="note">
-
-UPI payment opens your UPI app with the order amount.
-After payment, place the order on WhatsApp.
-
-</p>
-
-</div>
-
-
-<button
-class="whatsapp"
-onclick="sendWhatsAppOrder()">
-
-📲 Place Order on WhatsApp
-
-</button>
-
-
-</div>
-
-
-<footer>
-
-<h2>Cup Of Coffee</h2>
-
-<p>📍 Raja Park, Jaipur</p>
-
-<p>🕙 Open Daily: 10 AM - 4 AM</p>
-
-<p>☕ Fresh Food • Good Coffee • Good Vibes</p>
-
-</footer>
-
-
-<script>
-
-/* =========================
-   BUSINESS DETAILS
-========================= */
-
-const WHATSAPP_NUMBER = "919352582757";
-
-const UPI_ID = "cupof89479726@barodampay";
-
-const BUSINESS_NAME = "Cup Of Coffee";
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+
+import {
+    getFirestore,
+    collection,
+    addDoc,
+    serverTimestamp
+}
+from "https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
 
 
 /* =========================
-   CART
+   FIREBASE CONFIG
 ========================= */
+
+const firebaseConfig = {
+
+    apiKey:
+    "AIzaSyDuVWMltJCpPnW_RGWBnQZTXE_MtTy1sgs",
+
+    authDomain:
+    "cup-of-coffee-89146.firebaseapp.com",
+
+    projectId:
+    "cup-of-coffee-89146",
+
+    storageBucket:
+    "cup-of-coffee-89146.firebasestorage.app",
+
+    messagingSenderId:
+    "67162654268",
+
+    appId:
+    "1:67162654268:web:026929bf6dceb1f8156539",
+
+    measurementId:
+    "G-GHX74EQYLV"
+};
+
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+
+/* =========================
+   MENU
+========================= */
+
+const menu = [
+
+    {
+        id:"pizza",
+        name:"Veg Pizza",
+        price:249,
+        category:"🍕 Pizza",
+        description:"Cafe style cheesy veg pizza"
+    },
+
+    {
+        id:"soyabean-pizza",
+        name:"Soyabean Pizza",
+        price:279,
+        category:"🍕 Pizza",
+        description:"Cheesy pizza with spicy soyabean topping"
+    },
+
+    {
+        id:"sandwich",
+        name:"Veg Sandwich",
+        price:149,
+        category:"🥪 Sandwich",
+        description:"Fresh cafe style grilled sandwich"
+    },
+
+    {
+        id:"pasta",
+        name:"Pasta",
+        price:300,
+        category:"🍝 Pasta",
+        description:"Creamy cafe style pasta"
+    },
+
+    {
+        id:"cold-coffee-medium",
+        name:"Cold Coffee Medium",
+        price:149,
+        category:"☕ Coffee",
+        description:"Chilled creamy coffee with milk and vanilla ice cream"
+    },
+
+    {
+        id:"cold-coffee-large",
+        name:"Cold Coffee Large",
+        price:189,
+        category:"☕ Coffee",
+        description:"Chilled creamy coffee with milk and vanilla ice cream"
+    },
+
+    {
+        id:"choco-cold-coffee-medium",
+        name:"Choco Cold Coffee Medium",
+        price:169,
+        category:"☕ Coffee",
+        description:"Coffee blended with chocolate and served chilled"
+    },
+
+    {
+        id:"choco-cold-coffee-large",
+        name:"Choco Cold Coffee Large",
+        price:199,
+        category:"☕ Coffee",
+        description:"Coffee blended with chocolate and served chilled"
+    },
+
+    {
+        id:"oreo-cold-coffee",
+        name:"Oreo Cold Coffee Large",
+        price:199,
+        category:"☕ Coffee",
+        description:"Oreo biscuit and vanilla blended with chilled coffee"
+    }
+
+];
+
 
 let cart = [];
 
-let latitude = null;
-
-let longitude = null;
-
-let mapLink = "";
-
 
 /* =========================
-   ADD ITEM
+   SHOW MENU
 ========================= */
 
-function addItem(name, price){
-
-let item = cart.find(function(x){
-return x.name === name;
-});
-
-if(item){
-
-item.qty++;
-
-}else{
-
-cart.push({
-name:name,
-price:price,
-qty:1
-});
-
-}
-
-updateCart();
-
-showCart();
-
-}
+const menuContainer =
+document.getElementById("menu");
 
 
-/* =========================
-   UPDATE CART
-========================= */
-
-function updateCart(){
-
-let html = "";
-
-let total = 0;
-
-let count = 0;
+const categories =
+[
+    ...new Set(
+        menu.map(item => item.category)
+    )
+];
 
 
-cart.forEach(function(item,index){
+categories.forEach(category => {
 
-let amount = item.price * item.qty;
+    const heading =
+    document.createElement("h2");
 
-total += amount;
+    heading.className =
+    "category";
 
-count += item.qty;
+    heading.textContent =
+    category;
 
-
-html += `
-
-<div class="cartItem">
-
-<div>
-
-<b>${item.name}</b>
-
-<br>
-
-₹${item.price} × ${item.qty}
-
-</div>
+    menuContainer.appendChild(
+        heading
+    );
 
 
-<div class="qty">
+    menu
+    .filter(item => item.category === category)
+    .forEach(item => {
 
-<button onclick="decrease(${index})">
-−
-</button>
+        const box =
+        document.createElement("div");
 
-${item.qty}
+        box.className =
+        "item";
 
-<button onclick="increase(${index})">
-+
-</button>
+        box.innerHTML = `
 
-<br>
+            <div>
 
-₹${amount}
+                <h3>
+                    ${item.name}
+                </h3>
 
-</div>
+                <p>
+                    ${item.description}
+                </p>
 
-</div>
+                <div class="price">
+                    ₹${item.price}
+                </div>
 
-`;
+            </div>
+
+            <button>
+                Add
+            </button>
+
+        `;
+
+
+        box
+        .querySelector("button")
+        .onclick = () => {
+
+            addToCart(item);
+
+        };
+
+
+        menuContainer.appendChild(box);
+
+    });
 
 });
 
 
-document.getElementById("cartItems").innerHTML = html;
+/* =========================
+   ADD TO CART
+========================= */
 
-document.getElementById("total").innerText = total;
+function addToCart(item){
 
-document.getElementById("count").innerText = count;
+    const existing =
+    cart.find(
+        product => product.id === item.id
+    );
+
+
+    if(existing){
+
+        existing.quantity++;
+
+    }else{
+
+        cart.push({
+
+            ...item,
+
+            quantity:1
+
+        });
+
+    }
+
+
+    displayCart();
 
 }
 
 
 /* =========================
-   QUANTITY
+   DISPLAY CART
 ========================= */
 
-function increase(index){
+function displayCart(){
 
-cart[index].qty++;
+    const cartContainer =
+    document.getElementById(
+        "cartItems"
+    );
 
-updateCart();
 
-}
+    cartContainer.innerHTML = "";
 
 
-function decrease(index){
+    if(cart.length === 0){
 
-if(cart[index].qty > 1){
+        cartContainer.innerHTML =
+        "Cart is empty.";
 
-cart[index].qty--;
+    }
 
-}else{
 
-cart.splice(index,1);
+    let total = 0;
 
-}
 
-updateCart();
+    cart.forEach(item => {
+
+        const subtotal =
+        item.price *
+        item.quantity;
+
+
+        total += subtotal;
+
+
+        const row =
+        document.createElement("div");
+
+
+        row.className =
+        "cart-row";
+
+
+        row.innerHTML = `
+
+            <span>
+                ${item.name}
+                × ${item.quantity}
+            </span>
+
+            <span>
+                ₹${subtotal}
+
+                <button
+                    style="padding:5px 9px"
+                >
+                    −
+                </button>
+
+            </span>
+
+        `;
+
+
+        row
+        .querySelector("button")
+        .onclick = () => {
+
+            item.quantity--;
+
+            if(item.quantity <= 0){
+
+                cart =
+                cart.filter(
+                    x => x.id !== item.id
+                );
+
+            }
+
+            displayCart();
+
+        };
+
+
+        cartContainer.appendChild(row);
+
+    });
+
+
+    document.getElementById(
+        "total"
+    ).textContent = total;
 
 }
 
 
 /* =========================
-   SHOW CART
+   PLACE ORDER
 ========================= */
 
-function showCart(){
+document
+.getElementById("placeOrder")
+.addEventListener(
+"click",
+async function(){
 
-document.getElementById("cart").style.display = "block";
+    const name =
+    document
+    .getElementById("name")
+    .value
+    .trim();
 
-document.getElementById("cart").scrollIntoView({
-behavior:"smooth"
-});
 
-}
+    const phone =
+    document
+    .getElementById("phone")
+    .value
+    .trim();
 
 
-/* =========================
-   CURRENT LOCATION
-========================= */
+    const address =
+    document
+    .getElementById("address")
+    .value
+    .trim();
 
-function getLocation(){
 
-const status =
-document.getElementById("locationStatus");
+    const message =
+    document
+    .getElementById("message");
 
 
-if(!navigator.geolocation){
+    message.style.display =
+    "block";
 
-status.innerText =
-"❌ Location is not supported by this browser.";
 
-return;
+    if(
+        cart.length === 0 ||
+        !name ||
+        !phone ||
+        !address
+    ){
 
-}
+        message.className =
+        "error";
 
+        message.textContent =
+        "Please add items and fill all customer details.";
 
-status.innerText =
-"📍 Getting your current location...";
+        return;
 
+    }
 
-navigator.geolocation.getCurrentPosition(
 
-function(position){
+    const total =
+    cart.reduce(
+        (sum,item) =>
+        sum +
+        item.price *
+        item.quantity,
+        0
+    );
 
-latitude =
-position.coords.latitude;
 
-longitude =
-position.coords.longitude;
+    try{
 
+        const orderData = {
 
-mapLink =
-"https://www.google.com/maps?q=" +
-latitude +
-"," +
-longitude;
+            customer:{
 
+                name:name,
 
-status.innerHTML =
+                phone:phone,
 
-"✅ Location added successfully. " +
+                address:address
 
-'<a href="' +
-mapLink +
-'" target="_blank">' +
-"View on Google Maps" +
-"</a>";
+            },
 
-},
+            items:
 
-function(error){
+            cart.map(item => ({
 
-if(error.code === 1){
+                name:item.name,
 
-status.innerText =
-"❌ Location permission denied. Please allow location access.";
+                price:item.price,
 
-}else{
+                quantity:item.quantity
 
-status.innerText =
-"❌ Could not get location. Please try again.";
+            })),
 
-}
+            total:total,
 
-},
+            status:"NEW",
 
-{
-enableHighAccuracy:true,
-timeout:15000,
-maximumAge:0
-}
+            createdAt:
+            serverTimestamp()
 
-);
+        };
 
-}
 
+        const orderRef =
+        await addDoc(
+            collection(
+                db,
+                "orders"
+            ),
+            orderData
+        );
 
-/* =========================
-   UPI PAYMENT
-========================= */
 
-function payUPI(){
+        message.className =
+        "success";
 
-if(cart.length === 0){
 
-alert("Please add items to cart first.");
+        message.textContent =
+        "Order successfully placed! Order ID: "
+        +
+        orderRef.id
+        .slice(-6)
+        .toUpperCase();
 
-return;
 
-}
+        cart = [];
 
+        displayCart();
 
-let total = cart.reduce(
-function(sum,item){
 
-return sum + (item.price * item.qty);
+        document
+        .getElementById("name")
+        .value = "";
 
-},
-0
-);
 
+        document
+        .getElementById("phone")
+        .value = "";
 
-let customerName =
-document.getElementById("customerName").value.trim();
 
+        document
+        .getElementById("address")
+        .value = "";
 
-let note =
-BUSINESS_NAME +
-" Order" +
-(customerName ? " - " + customerName : "");
 
+    }catch(error){
 
-const upiURL =
+        console.error(error);
 
-"upi://pay" +
 
-"?pa=" +
-encodeURIComponent(UPI_ID) +
+        message.className =
+        "error";
 
-"&pn=" +
-encodeURIComponent(BUSINESS_NAME) +
 
-"&am=" +
-total.toFixed(2) +
+        message.textContent =
+        "Order nahi ja saka. Firebase Rules check karein.";
 
-"&cu=INR" +
-
-"&tn=" +
-encodeURIComponent(note);
-
-
-window.location.href = upiURL;
-
-}
-
-
-/* =========================
-   WHATSAPP ORDER
-========================= */
-
-function sendWhatsAppOrder(){
-
-if(cart.length === 0){
-
-alert("Please add items to cart first.");
-
-return;
-
-}
-
-
-let name =
-document.getElementById("customerName")
-.value.trim();
-
-
-let phone =
-document.getElementById("customerPhone")
-.value.trim();
-
-
-let address =
-document.getElementById("customerAddress")
-.value.trim();
-
-
-let landmark =
-document.getElementById("customerLandmark")
-.value.trim();
-
-
-if(!name){
-
-alert("Please enter your name.");
-
-return;
-
-}
-
-
-if(!phone){
-
-alert("Please enter your mobile number.");
-
-return;
-
-}
-
-
-if(!address){
-
-alert("Please enter your delivery address.");
-
-return;
-
-}
-
-
-/* PAYMENT METHOD */
-
-let paymentElement =
-document.querySelector(
-'input[name="payment"]:checked'
-);
-
-
-let payment =
-paymentElement
-? paymentElement.value
-: "COD";
-
-
-/* ITEMS */
-
-let orderText = "";
-
-let total = 0;
-
-
-cart.forEach(function(item){
-
-let amount =
-item.price * item.qty;
-
-total += amount;
-
-
-orderText +=
-item.name +
-" × " +
-item.qty +
-" = ₹" +
-amount +
-"\n";
+    }
 
 });
-
-
-/* LOCATION */
-
-let locationText =
-"Not provided";
-
-
-if(mapLink){
-
-locationText =
-mapLink;
-
-}
-
-
-/* WHATSAPP MESSAGE */
-
-let message =
-
-"☕ *CUP OF COFFEE - NEW ORDER*\n\n" +
-
-"🛒 *ORDER*\n" +
-
-orderText +
-
-"\n💰 *TOTAL: ₹" +
-total +
-"*\n\n" +
-
-"👤 *CUSTOMER DETAILS*\n" +
-
-"Name: " +
-name +
-"\n" +
-
-"Mobile: " +
-phone +
-"\n" +
-
-"Address: " +
-address +
-"\n" +
-
-"Landmark: " +
-(landmark || "Not provided") +
-"\n\n" +
-
-"💳 *PAYMENT: " +
-payment +
-"*\n\n" +
-
-"📍 *CUSTOMER CURRENT LOCATION*\n" +
-
-locationText;
-
-
-/* OPEN WHATSAPP */
-
-const whatsappURL =
-
-"https://wa.me/" +
-WHATSAPP_NUMBER +
-"?text=" +
-encodeURIComponent(message);
-
-
-window.open(
-whatsappURL,
-"_blank"
-);
-
-}
 
 </script>
 
