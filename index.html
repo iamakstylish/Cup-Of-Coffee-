@@ -1,1081 +1,698 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cup Of Coffee | Order Online</title>
-
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-
-body{
-  font-family:Arial,sans-serif;
-  background:#f5faf7;
-  color:#17251d;
-}
-
-header{
-  position:sticky;
-  top:0;
-  z-index:100;
-  background:white;
-  padding:15px 18px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  box-shadow:0 2px 12px #0002;
-}
-
-.logo{
-  font-size:21px;
-  font-weight:800;
-}
-
-.cartBtn{
-  background:#174f3b;
-  color:white;
-  border:0;
-  padding:11px 16px;
-  border-radius:25px;
-  font-weight:bold;
-}
-
-.hero{
-  padding:50px 20px;
-  text-align:center;
-  background:linear-gradient(135deg,#dff3e7,#e9f4ff);
-}
-
-.hero h1{
-  font-size:38px;
-  margin-bottom:10px;
-}
-
-.hero p{
-  color:#53635a;
-  line-height:1.5;
-}
-
-.orderNow{
-  margin-top:20px;
-  padding:14px 26px;
-  border:0;
-  border-radius:28px;
-  background:#174f3b;
-  color:white;
-  font-size:16px;
-  font-weight:bold;
-}
-
-section{
-  max-width:950px;
-  margin:auto;
-  padding:30px 18px;
-}
-
-h2{
-  text-align:center;
-  margin-bottom:22px;
-}
-
-.categories{
-  display:flex;
-  gap:9px;
-  overflow-x:auto;
-  padding-bottom:18px;
-}
-
-.categories button{
-  white-space:nowrap;
-  padding:9px 15px;
-  border-radius:20px;
-  border:1px solid #174f3b;
-  background:white;
-  color:#174f3b;
-}
-
-.menu{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:16px;
-}
-
-.item{
-  background:white;
-  padding:18px;
-  border-radius:18px;
-  box-shadow:0 3px 14px #0001;
-}
-
-.item h3{
-  margin-bottom:8px;
-}
-
-.item p{
-  font-size:14px;
-  color:#66736b;
-  min-height:38px;
-}
-
-.price{
-  font-size:19px;
-  font-weight:bold;
-  margin:13px 0;
-}
-
-.add{
-  width:100%;
-  padding:11px;
-  border:0;
-  border-radius:10px;
-  background:#174f3b;
-  color:white;
-  font-weight:bold;
-}
-
-.cart{
-  display:none;
-  max-width:650px;
-  margin:25px auto;
-  padding:22px;
-  background:white;
-  border-radius:18px;
-  box-shadow:0 3px 15px #0002;
-}
-
-.cart h2{
-  text-align:left;
-}
-
-.cartItem{
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  padding:12px 0;
-  border-bottom:1px solid #ddd;
-}
-
-.qty button{
-  border:0;
-  background:#e7f0eb;
-  padding:5px 9px;
-  border-radius:6px;
-}
-
-.total{
-  font-size:21px;
-  font-weight:bold;
-  margin:20px 0;
-}
-
-input,textarea{
-  width:100%;
-  padding:13px;
-  margin:7px 0;
-  border:1px solid #ccc;
-  border-radius:9px;
-  font-size:15px;
-}
-
-.locationBtn{
-  width:100%;
-  padding:13px;
-  border:0;
-  border-radius:10px;
-  background:#315c9b;
-  color:white;
-  font-weight:bold;
-  margin:7px 0;
-}
-
-.locationStatus{
-  font-size:13px;
-  margin:5px 0 12px;
-  color:#53635a;
-}
-
-.paymentBox{
-  background:#f2f7f4;
-  padding:15px;
-  border-radius:12px;
-  margin-top:15px;
-}
-
-.paymentBox label{
-  display:block;
-  margin:12px 0;
-}
-
-.paymentBox input{
-  width:auto;
-  margin-right:8px;
-}
-
-.payBtn{
-  width:100%;
-  padding:14px;
-  border:0;
-  border-radius:10px;
-  background:#16804b;
-  color:white;
-  font-weight:bold;
-  margin-top:10px;
-}
-
-.whatsapp{
-  width:100%;
-  padding:15px;
-  border:0;
-  border-radius:10px;
-  background:#25d366;
-  color:white;
-  font-size:17px;
-  font-weight:bold;
-  margin-top:12px;
-}
-
-.note{
-  font-size:12px;
-  color:#66736b;
-  margin-top:8px;
-  line-height:1.5;
-}
-
-footer{
-  margin-top:30px;
-  background:#174f3b;
-  color:white;
-  text-align:center;
-  padding:30px 15px;
-}
-
-footer p{
-  margin-top:7px;
-}
-
-@media(max-width:500px){
-  .hero h1{
-    font-size:32px;
+[
+  {
+    "id": "item-1",
+    "category": "Pasta",
+    "name": "White Sauce Pasta (450 Gram)",
+    "price": 200.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-2",
+    "category": "Burger",
+    "name": "Peri Peri Burger",
+    "price": 189.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-3",
+    "category": "Burger",
+    "name": "Veg Tikki Burger",
+    "price": 189.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-4",
+    "category": "Burger",
+    "name": "Aloo Tikki Burger",
+    "price": 179.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-5",
+    "category": "Burger",
+    "name": "Cheese Burst Burger",
+    "price": 199.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-6",
+    "category": "Sandwich",
+    "name": "Non Grilled Veg Sandwich",
+    "price": 149.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-7",
+    "category": "Sandwich",
+    "name": "Veg Grilled Sandwich",
+    "price": 159.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-8",
+    "category": "Sandwich",
+    "name": "Peri Peri Sandwich",
+    "price": 169.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-9",
+    "category": "Sandwich",
+    "name": "Cheese Corn Sandwich",
+    "price": 179.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-10",
+    "category": "Sandwich",
+    "name": "Tandoori Paneer Sandwich",
+    "price": 349.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-11",
+    "category": "Sandwich",
+    "name": "Veg Cheese Sandwich",
+    "price": 189.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-12",
+    "category": "Sandwich",
+    "name": "Chilli Cheese Sandwich",
+    "price": 185.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-13",
+    "category": "Fries",
+    "name": "French Fries",
+    "price": 199.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-14",
+    "category": "Fries",
+    "name": "Peri Peri Fries",
+    "price": 219.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-15",
+    "category": "Fries",
+    "name": "Chilli Mayo Fries",
+    "price": 249.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-16",
+    "category": "Fries",
+    "name": "Chilli Tandoori Fries",
+    "price": 249.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-17",
+    "category": "Fries",
+    "name": "Masala Fries",
+    "price": 219.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-18",
+    "category": "Maggi",
+    "name": "Plain Maggi",
+    "price": 139.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-19",
+    "category": "Maggi",
+    "name": "Vegetable Maggie",
+    "price": 159.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-20",
+    "category": "Maggi",
+    "name": "Creamy Maggi",
+    "price": 179.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-21",
+    "category": "Maggi",
+    "name": "Tandoori Maggi",
+    "price": 179.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-22",
+    "category": "Maggi",
+    "name": "Cheese Maggi",
+    "price": 199.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-23",
+    "category": "Momos",
+    "name": "Veg Steamed Momos (8 Pieces)",
+    "price": 179.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-24",
+    "category": "Momos",
+    "name": "Veg Fried Momos (8 Pieces)",
+    "price": 199.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-25",
+    "category": "Momos",
+    "name": "Veg Cheese Momos (8 Pieces)",
+    "price": 239.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-26",
+    "category": "Momos",
+    "name": "Veg Kurkure Momos (8 Pieces)",
+    "price": 210.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-27",
+    "category": "Mojito & Soda",
+    "name": "Mint Mojito (350 ml)",
+    "price": 129.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-28",
+    "category": "Mojito & Soda",
+    "name": "Watermelon Punch Mojito (350 ml)",
+    "price": 129.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-29",
+    "category": "Mojito & Soda",
+    "name": "Mango Mojito (350 ml)",
+    "price": 149.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-30",
+    "category": "Mojito & Soda",
+    "name": "Strawberry Mojito (350 ml)",
+    "price": 149.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-31",
+    "category": "Mojito & Soda",
+    "name": "Blueberry Mojito (350 ml)",
+    "price": 170.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-32",
+    "category": "Mojito & Soda",
+    "name": "Blueberry Mango Mojito (350 ml)",
+    "price": 200.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-33",
+    "category": "Mojito & Soda",
+    "name": "Mix Berry Mojito (350 ml)",
+    "price": 200.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-34",
+    "category": "Mojito & Soda",
+    "name": "Spicy Mango Mojito (350 ml)",
+    "price": 190.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-35",
+    "category": "Mojito & Soda",
+    "name": "Blue Lagoon Mojito (350 ml)",
+    "price": 200.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-36",
+    "category": "Mojito & Soda",
+    "name": "Fresh Lime Soda (350 ml)",
+    "price": 120.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-37",
+    "category": "Iced Tea",
+    "name": "Lemon Mint Iced Tea (350 ml)",
+    "price": 140.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-38",
+    "category": "Iced Tea",
+    "name": "Watermelon Iced Tea (350 ml)",
+    "price": 160.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-39",
+    "category": "Iced Tea",
+    "name": "Peach Iced Tea (350 ml)",
+    "price": 160.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-40",
+    "category": "Iced Tea",
+    "name": "Blueberry Ice Tea",
+    "price": 160.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-41",
+    "category": "Cold Coffee",
+    "name": "Cold Coffee — Medium (250 ml)",
+    "price": 169.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-42",
+    "category": "Cold Coffee",
+    "name": "Cold Coffee — Large (350 ml)",
+    "price": 209.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-43",
+    "category": "Cold Coffee",
+    "name": "Choco Cold Coffee — Medium (250 ml)",
+    "price": 179.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-44",
+    "category": "Cold Coffee",
+    "name": "Choco Cold Coffee — Large (350 ml)",
+    "price": 219.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-45",
+    "category": "Cold Coffee",
+    "name": "Oreo Cold Coffee — Medium",
+    "price": 179.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-46",
+    "category": "Cold Coffee",
+    "name": "Oreo Cold Coffee — Large",
+    "price": 219.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-47",
+    "category": "Cold Coffee",
+    "name": "Dark Chocolate Cold Coffee — Medium (250 ml)",
+    "price": 189.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-48",
+    "category": "Cold Coffee",
+    "name": "Dark Chocolate Cold Coffee — Large (350 ml)",
+    "price": 229.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-49",
+    "category": "Shakes",
+    "name": "Strawberry Shake — Medium (250 ml)",
+    "price": 169.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-50",
+    "category": "Shakes",
+    "name": "Strawberry Shake — Large (350 ml)",
+    "price": 209.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-51",
+    "category": "Shakes",
+    "name": "Mango Shake — Medium (250 ml)",
+    "price": 169.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-52",
+    "category": "Shakes",
+    "name": "Mango Shake — Large (350 ml)",
+    "price": 209.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-53",
+    "category": "Shakes",
+    "name": "Blueberry Shake — Medium (250 ml)",
+    "price": 179.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-54",
+    "category": "Shakes",
+    "name": "Blueberry Shake — Large (350 ml)",
+    "price": 219.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-55",
+    "category": "Shakes",
+    "name": "Oreo Shake — Medium (250 ml)",
+    "price": 169.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-56",
+    "category": "Shakes",
+    "name": "Oreo Shake — Large (350 ml)",
+    "price": 209.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-57",
+    "category": "Shakes",
+    "name": "Mango Berry Shake — Medium (250 ml)",
+    "price": 189.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-58",
+    "category": "Shakes",
+    "name": "Mango Berry Shake — Large (350 ml)",
+    "price": 229.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-59",
+    "category": "Shakes",
+    "name": "Mango Oreo Shake — Medium (250 ml)",
+    "price": 189.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-60",
+    "category": "Shakes",
+    "name": "Mango Oreo Shake — Large (350 ml)",
+    "price": 229.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-61",
+    "category": "Shakes",
+    "name": "KitKat Shake — Medium (250 ml)",
+    "price": 189.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-62",
+    "category": "Shakes",
+    "name": "KitKat Shake — Large (350 ml)",
+    "price": 229.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-63",
+    "category": "Shakes",
+    "name": "Dark Chocolate Shake — Medium (250 ml)",
+    "price": 179.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-64",
+    "category": "Shakes",
+    "name": "Dark Chocolate Shake — Large (350 ml)",
+    "price": 219.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-65",
+    "category": "Ice Cream",
+    "name": "Vanilla Ice Cream (1 Scoop) — Listing 1",
+    "price": 30.0,
+    "tax": 0.0,
+    "available": true
+  },
+  {
+    "id": "item-66",
+    "category": "Ice Cream",
+    "name": "Chocolate Ice Cream (1 Scoop) — Listing 1",
+    "price": 40.0,
+    "tax": 0.0,
+    "available": true
+  },
+  {
+    "id": "item-67",
+    "category": "Ice Cream",
+    "name": "Chocolate Ice Cream (1 Scoop) — Listing 2",
+    "price": 70.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-68",
+    "category": "Ice Cream",
+    "name": "Vanilla Ice Cream (1 Scoop) — Listing 2",
+    "price": 50.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-69",
+    "category": "Extras",
+    "name": "Extra Dip",
+    "price": 20.0,
+    "tax": 0.0,
+    "available": true
+  },
+  {
+    "id": "item-70",
+    "category": "Extras",
+    "name": "Extra Cheese",
+    "price": 30.0,
+    "tax": 0.0,
+    "available": true
+  },
+  {
+    "id": "item-71",
+    "category": "Extras",
+    "name": "Extra Mayonnaise Dip",
+    "price": 20.0,
+    "tax": 0.0,
+    "available": true
+  },
+  {
+    "id": "item-72",
+    "category": "Extras",
+    "name": "Extra Chatni",
+    "price": 20.0,
+    "tax": 0.0,
+    "available": true
+  },
+  {
+    "id": "item-73",
+    "category": "Extras",
+    "name": "Extra Tikki",
+    "price": 40.0,
+    "tax": 0.0,
+    "available": true
+  },
+  {
+    "id": "item-74",
+    "category": "Pizza",
+    "name": "OTC Pizza",
+    "price": 449.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-75",
+    "category": "Pizza",
+    "name": "Sweet Corn Cheese Pizza",
+    "price": 479.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-76",
+    "category": "Pizza",
+    "name": "Paneer Cheese Pizza",
+    "price": 549.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-77",
+    "category": "Pizza",
+    "name": "Tandoori Paneer Pizza",
+    "price": 549.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-78",
+    "category": "Pizza",
+    "name": "Onion Pizza",
+    "price": 419.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-79",
+    "category": "Pizza",
+    "name": "Classic Margherita Pizza (8 inch)",
+    "price": 379.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-80",
+    "category": "Pizza",
+    "name": "Capsicum Pizza (8 inches)",
+    "price": 419.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-81",
+    "category": "Pizza",
+    "name": "Tomato Pizza (8 Inch)",
+    "price": 419.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-82",
+    "category": "Other Drinks",
+    "name": "Hot Chocolate",
+    "price": 340.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-83",
+    "category": "Other Drinks",
+    "name": "Water Bottle (500 ml)",
+    "price": 30.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-84",
+    "category": "Other Drinks",
+    "name": "Pepsi (250 ml)",
+    "price": 20.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-85",
+    "category": "Other Drinks",
+    "name": "Iced Latte — Medium",
+    "price": 149.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-86",
+    "category": "Other Drinks",
+    "name": "Iced Latte — Large",
+    "price": 189.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-87",
+    "category": "Combos",
+    "name": "French Fries with Cold Coffee",
+    "price": 378.0,
+    "tax": 5.0,
+    "available": true
   }
-}
-</style>
-</head>
-
-<body>
-
-<header>
-
-<div class="logo">
-☕ Cup Of Coffee
-</div>
-
-<button class="cartBtn" onclick="showCart()">
-🛒 Cart (<span id="count">0</span>)
-</button>
-
-</header>
-
-
-<div class="hero">
-
-<h1>Cup Of Coffee</h1>
-
-<p>Fresh food • Good coffee • Good vibes</p>
-
-<p>📍 Raja Park, Jaipur</p>
-
-<button class="orderNow"
-onclick="document.getElementById('menu').scrollIntoView({behavior:'smooth'})">
-Order Now
-</button>
-
-</div>
-
-
-<section id="menu">
-
-<h2>Our Menu</h2>
-
-<div class="categories">
-
-<button>All</button>
-<button>Pizza</button>
-<button>Burger</button>
-<button>Sandwich</button>
-<button>Maggi</button>
-<button>Drinks</button>
-
-</div>
-
-
-<div class="menu">
-
-
-<div class="item">
-
-<h3>🍔 Aloo Tikki Burger</h3>
-
-<p>Crispy aloo tikki burger with fresh vegetables and sauces.</p>
-
-<div class="price">₹79</div>
-
-<button class="add"
-onclick="addItem('Aloo Tikki Burger',79)">
-Add to Cart
-</button>
-
-</div>
-
-
-<div class="item">
-
-<h3>🥪 Veg Grilled Sandwich</h3>
-
-<p>Grilled sandwich with fresh vegetables and sauces.</p>
-
-<div class="price">₹89</div>
-
-<button class="add"
-onclick="addItem('Veg Grilled Sandwich',89)">
-Add to Cart
-</button>
-
-</div>
-
-
-<div class="item">
-
-<h3>🥪 Veg Cheese Sandwich</h3>
-
-<p>Grilled vegetable sandwich with melted cheese.</p>
-
-<div class="price">₹109</div>
-
-<button class="add"
-onclick="addItem('Veg Cheese Sandwich',109)">
-Add to Cart
-</button>
-
-</div>
-
-
-<div class="item">
-
-<h3>🥪 Peri Peri Sandwich</h3>
-
-<p>Spicy peri peri sandwich with fresh vegetables.</p>
-
-<div class="price">₹99</div>
-
-<button class="add"
-onclick="addItem('Peri Peri Sandwich',99)">
-Add to Cart
-</button>
-
-</div>
-
-
-<div class="item">
-
-<h3>🍜 Plain Maggi</h3>
-
-<p>Classic hot and tasty Maggi.</p>
-
-<div class="price">₹79</div>
-
-<button class="add"
-onclick="addItem('Plain Maggi',79)">
-Add to Cart
-</button>
-
-</div>
-
-
-<div class="item">
-
-<h3>🍜 Vegetable Maggi</h3>
-
-<p>Maggi with fresh vegetables and spices.</p>
-
-<div class="price">₹89</div>
-
-<button class="add"
-onclick="addItem('Vegetable Maggi',89)">
-Add to Cart
-</button>
-
-</div>
-
-
-<div class="item">
-
-<h3>🧀 Cheese Maggi</h3>
-
-<p>Creamy cheesy Maggi loaded with cheese.</p>
-
-<div class="price">₹109</div>
-
-<button class="add"
-onclick="addItem('Cheese Maggi',109)">
-Add to Cart
-</button>
-
-</div>
-
-
-<div class="item">
-
-<h3>🥤 Cold Coffee</h3>
-
-<p>Chilled creamy cafe-style cold coffee.</p>
-
-<div class="price">₹99</div>
-
-<button class="add"
-onclick="addItem('Cold Coffee',99)">
-Add to Cart
-</button>
-
-</div>
-
-
-<div class="item">
-
-<h3>🥤 Iced Latte</h3>
-
-<p>Refreshing chilled iced latte.</p>
-
-<div class="price">₹109</div>
-
-<button class="add"
-onclick="addItem('Iced Latte',109)">
-Add to Cart
-</button>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<div class="cart" id="cart">
-
-<h2>🛒 Your Cart</h2>
-
-<div id="cartItems"></div>
-
-<div class="total">
-Total: ₹<span id="total">0</span>
-</div>
-
-
-<h3>Delivery Details</h3>
-
-
-<input
-id="customerName"
-placeholder="Your Name">
-
-
-<input
-id="customerPhone"
-placeholder="Mobile Number"
-type="tel">
-
-
-<textarea
-id="customerAddress"
-rows="3"
-placeholder="Full Delivery Address"></textarea>
-
-
-<input
-id="customerLandmark"
-placeholder="Landmark">
-
-
-<button
-class="locationBtn"
-onclick="getLocation()">
-
-📍 Use My Current Location
-
-</button>
-
-
-<div
-class="locationStatus"
-id="locationStatus">
-
-Location not added
-
-</div>
-
-
-<div class="paymentBox">
-
-<h3>💳 Payment Method</h3>
-
-
-<label>
-
-<input
-type="radio"
-name="payment"
-value="UPI"
-checked>
-
-Online UPI Payment
-
-</label>
-
-
-<label>
-
-<input
-type="radio"
-name="payment"
-value="COD">
-
-Cash on Delivery
-
-</label>
-
-
-<button
-class="payBtn"
-onclick="payUPI()">
-
-💳 Pay Online with UPI
-
-</button>
-
-
-<p class="note">
-
-UPI payment opens your UPI app with the order amount.
-After payment, place the order on WhatsApp.
-
-</p>
-
-</div>
-
-
-<button
-class="whatsapp"
-onclick="sendWhatsAppOrder()">
-
-📲 Place Order on WhatsApp
-
-</button>
-
-
-</div>
-
-
-<footer>
-
-<h2>Cup Of Coffee</h2>
-
-<p>📍 Raja Park, Jaipur</p>
-
-<p>🕙 Open Daily: 10 AM - 4 AM</p>
-
-<p>☕ Fresh Food • Good Coffee • Good Vibes</p>
-
-</footer>
-
-
-<script>
-
-/* =========================
-   BUSINESS DETAILS
-========================= */
-
-const WHATSAPP_NUMBER = "919352582757";
-
-const UPI_ID = "cupof89479726@barodampay";
-
-const BUSINESS_NAME = "Cup Of Coffee";
-
-
-/* =========================
-   CART
-========================= */
-
-let cart = [];
-
-let latitude = null;
-
-let longitude = null;
-
-let mapLink = "";
-
-
-/* =========================
-   ADD ITEM
-========================= */
-
-function addItem(name, price){
-
-let item = cart.find(function(x){
-return x.name === name;
-});
-
-if(item){
-
-item.qty++;
-
-}else{
-
-cart.push({
-name:name,
-price:price,
-qty:1
-});
-
-}
-
-updateCart();
-
-showCart();
-
-}
-
-
-/* =========================
-   UPDATE CART
-========================= */
-
-function updateCart(){
-
-let html = "";
-
-let total = 0;
-
-let count = 0;
-
-
-cart.forEach(function(item,index){
-
-let amount = item.price * item.qty;
-
-total += amount;
-
-count += item.qty;
-
-
-html += `
-
-<div class="cartItem">
-
-<div>
-
-<b>${item.name}</b>
-
-<br>
-
-₹${item.price} × ${item.qty}
-
-</div>
-
-
-<div class="qty">
-
-<button onclick="decrease(${index})">
-−
-</button>
-
-${item.qty}
-
-<button onclick="increase(${index})">
-+
-</button>
-
-<br>
-
-₹${amount}
-
-</div>
-
-</div>
-
-`;
-
-});
-
-
-document.getElementById("cartItems").innerHTML = html;
-
-document.getElementById("total").innerText = total;
-
-document.getElementById("count").innerText = count;
-
-}
-
-
-/* =========================
-   QUANTITY
-========================= */
-
-function increase(index){
-
-cart[index].qty++;
-
-updateCart();
-
-}
-
-
-function decrease(index){
-
-if(cart[index].qty > 1){
-
-cart[index].qty--;
-
-}else{
-
-cart.splice(index,1);
-
-}
-
-updateCart();
-
-}
-
-
-/* =========================
-   SHOW CART
-========================= */
-
-function showCart(){
-
-document.getElementById("cart").style.display = "block";
-
-document.getElementById("cart").scrollIntoView({
-behavior:"smooth"
-});
-
-}
-
-
-/* =========================
-   CURRENT LOCATION
-========================= */
-
-function getLocation(){
-
-const status =
-document.getElementById("locationStatus");
-
-
-if(!navigator.geolocation){
-
-status.innerText =
-"❌ Location is not supported by this browser.";
-
-return;
-
-}
-
-
-status.innerText =
-"📍 Getting your current location...";
-
-
-navigator.geolocation.getCurrentPosition(
-
-function(position){
-
-latitude =
-position.coords.latitude;
-
-longitude =
-position.coords.longitude;
-
-
-mapLink =
-"https://www.google.com/maps?q=" +
-latitude +
-"," +
-longitude;
-
-
-status.innerHTML =
-
-"✅ Location added successfully. " +
-
-'<a href="' +
-mapLink +
-'" target="_blank">' +
-"View on Google Maps" +
-"</a>";
-
-},
-
-function(error){
-
-if(error.code === 1){
-
-status.innerText =
-"❌ Location permission denied. Please allow location access.";
-
-}else{
-
-status.innerText =
-"❌ Could not get location. Please try again.";
-
-}
-
-},
-
-{
-enableHighAccuracy:true,
-timeout:15000,
-maximumAge:0
-}
-
-);
-
-}
-
-
-/* =========================
-   UPI PAYMENT
-========================= */
-
-function payUPI(){
-
-if(cart.length === 0){
-
-alert("Please add items to cart first.");
-
-return;
-
-}
-
-
-let total = cart.reduce(
-function(sum,item){
-
-return sum + (item.price * item.qty);
-
-},
-0
-);
-
-
-let customerName =
-document.getElementById("customerName").value.trim();
-
-
-let note =
-BUSINESS_NAME +
-" Order" +
-(customerName ? " - " + customerName : "");
-
-
-const upiURL =
-
-"upi://pay" +
-
-"?pa=" +
-encodeURIComponent(UPI_ID) +
-
-"&pn=" +
-encodeURIComponent(BUSINESS_NAME) +
-
-"&am=" +
-total.toFixed(2) +
-
-"&cu=INR" +
-
-"&tn=" +
-encodeURIComponent(note);
-
-
-window.location.href = upiURL;
-
-}
-
-
-/* =========================
-   WHATSAPP ORDER
-========================= */
-
-function sendWhatsAppOrder(){
-
-if(cart.length === 0){
-
-alert("Please add items to cart first.");
-
-return;
-
-}
-
-
-let name =
-document.getElementById("customerName")
-.value.trim();
-
-
-let phone =
-document.getElementById("customerPhone")
-.value.trim();
-
-
-let address =
-document.getElementById("customerAddress")
-.value.trim();
-
-
-let landmark =
-document.getElementById("customerLandmark")
-.value.trim();
-
-
-if(!name){
-
-alert("Please enter your name.");
-
-return;
-
-}
-
-
-if(!phone){
-
-alert("Please enter your mobile number.");
-
-return;
-
-}
-
-
-if(!address){
-
-alert("Please enter your delivery address.");
-
-return;
-
-}
-
-
-/* PAYMENT METHOD */
-
-let paymentElement =
-document.querySelector(
-'input[name="payment"]:checked'
-);
-
-
-let payment =
-paymentElement
-? paymentElement.value
-: "COD";
-
-
-/* ITEMS */
-
-let orderText = "";
-
-let total = 0;
-
-
-cart.forEach(function(item){
-
-let amount =
-item.price * item.qty;
-
-total += amount;
-
-
-orderText +=
-item.name +
-" × " +
-item.qty +
-" = ₹" +
-amount +
-"\n";
-
-});
-
-
-/* LOCATION */
-
-let locationText =
-"Not provided";
-
-
-if(mapLink){
-
-locationText =
-mapLink;
-
-}
-
-
-/* WHATSAPP MESSAGE */
-
-let message =
-
-"☕ *CUP OF COFFEE - NEW ORDER*\n\n" +
-
-"🛒 *ORDER*\n" +
-
-orderText +
-
-"\n💰 *TOTAL: ₹" +
-total +
-"*\n\n" +
-
-"👤 *CUSTOMER DETAILS*\n" +
-
-"Name: " +
-name +
-"\n" +
-
-"Mobile: " +
-phone +
-"\n" +
-
-"Address: " +
-address +
-"\n" +
-
-"Landmark: " +
-(landmark || "Not provided") +
-"\n\n" +
-
-"💳 *PAYMENT: " +
-payment +
-"*\n\n" +
-
-"📍 *CUSTOMER CURRENT LOCATION*\n" +
-
-locationText;
-
-
-/* OPEN WHATSAPP */
-
-const whatsappURL =
-
-"https://wa.me/" +
-WHATSAPP_NUMBER +
-"?text=" +
-encodeURIComponent(message);
-
-
-window.open(
-whatsappURL,
-"_blank"
-);
-
-}
-
-</script>
-
-</body>
-</html>
+]
