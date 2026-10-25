@@ -1,0 +1,698 @@
+[
+  {
+    "id": "item-1",
+    "category": "Pasta",
+    "name": "White Sauce Pasta (450 Gram)",
+    "price": 200.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-2",
+    "category": "Burger",
+    "name": "Peri Peri Burger",
+    "price": 189.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-3",
+    "category": "Burger",
+    "name": "Veg Tikki Burger",
+    "price": 189.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-4",
+    "category": "Burger",
+    "name": "Aloo Tikki Burger",
+    "price": 179.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-5",
+    "category": "Burger",
+    "name": "Cheese Burst Burger",
+    "price": 199.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-6",
+    "category": "Sandwich",
+    "name": "Non Grilled Veg Sandwich",
+    "price": 149.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-7",
+    "category": "Sandwich",
+    "name": "Veg Grilled Sandwich",
+    "price": 159.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-8",
+    "category": "Sandwich",
+    "name": "Peri Peri Sandwich",
+    "price": 169.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-9",
+    "category": "Sandwich",
+    "name": "Cheese Corn Sandwich",
+    "price": 179.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-10",
+    "category": "Sandwich",
+    "name": "Tandoori Paneer Sandwich",
+    "price": 349.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-11",
+    "category": "Sandwich",
+    "name": "Veg Cheese Sandwich",
+    "price": 189.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-12",
+    "category": "Sandwich",
+    "name": "Chilli Cheese Sandwich",
+    "price": 185.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-13",
+    "category": "Fries",
+    "name": "French Fries",
+    "price": 199.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-14",
+    "category": "Fries",
+    "name": "Peri Peri Fries",
+    "price": 219.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-15",
+    "category": "Fries",
+    "name": "Chilli Mayo Fries",
+    "price": 249.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-16",
+    "category": "Fries",
+    "name": "Chilli Tandoori Fries",
+    "price": 249.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-17",
+    "category": "Fries",
+    "name": "Masala Fries",
+    "price": 219.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-18",
+    "category": "Maggi",
+    "name": "Plain Maggi",
+    "price": 139.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-19",
+    "category": "Maggi",
+    "name": "Vegetable Maggie",
+    "price": 159.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-20",
+    "category": "Maggi",
+    "name": "Creamy Maggi",
+    "price": 179.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-21",
+    "category": "Maggi",
+    "name": "Tandoori Maggi",
+    "price": 179.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-22",
+    "category": "Maggi",
+    "name": "Cheese Maggi",
+    "price": 199.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-23",
+    "category": "Momos",
+    "name": "Veg Steamed Momos (8 Pieces)",
+    "price": 179.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-24",
+    "category": "Momos",
+    "name": "Veg Fried Momos (8 Pieces)",
+    "price": 199.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-25",
+    "category": "Momos",
+    "name": "Veg Cheese Momos (8 Pieces)",
+    "price": 239.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-26",
+    "category": "Momos",
+    "name": "Veg Kurkure Momos (8 Pieces)",
+    "price": 210.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-27",
+    "category": "Mojito & Soda",
+    "name": "Mint Mojito (350 ml)",
+    "price": 129.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-28",
+    "category": "Mojito & Soda",
+    "name": "Watermelon Punch Mojito (350 ml)",
+    "price": 129.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-29",
+    "category": "Mojito & Soda",
+    "name": "Mango Mojito (350 ml)",
+    "price": 149.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-30",
+    "category": "Mojito & Soda",
+    "name": "Strawberry Mojito (350 ml)",
+    "price": 149.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-31",
+    "category": "Mojito & Soda",
+    "name": "Blueberry Mojito (350 ml)",
+    "price": 170.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-32",
+    "category": "Mojito & Soda",
+    "name": "Blueberry Mango Mojito (350 ml)",
+    "price": 200.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-33",
+    "category": "Mojito & Soda",
+    "name": "Mix Berry Mojito (350 ml)",
+    "price": 200.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-34",
+    "category": "Mojito & Soda",
+    "name": "Spicy Mango Mojito (350 ml)",
+    "price": 190.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-35",
+    "category": "Mojito & Soda",
+    "name": "Blue Lagoon Mojito (350 ml)",
+    "price": 200.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-36",
+    "category": "Mojito & Soda",
+    "name": "Fresh Lime Soda (350 ml)",
+    "price": 120.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-37",
+    "category": "Iced Tea",
+    "name": "Lemon Mint Iced Tea (350 ml)",
+    "price": 140.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-38",
+    "category": "Iced Tea",
+    "name": "Watermelon Iced Tea (350 ml)",
+    "price": 160.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-39",
+    "category": "Iced Tea",
+    "name": "Peach Iced Tea (350 ml)",
+    "price": 160.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-40",
+    "category": "Iced Tea",
+    "name": "Blueberry Ice Tea",
+    "price": 160.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-41",
+    "category": "Cold Coffee",
+    "name": "Cold Coffee — Medium (250 ml)",
+    "price": 169.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-42",
+    "category": "Cold Coffee",
+    "name": "Cold Coffee — Large (350 ml)",
+    "price": 209.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-43",
+    "category": "Cold Coffee",
+    "name": "Choco Cold Coffee — Medium (250 ml)",
+    "price": 179.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-44",
+    "category": "Cold Coffee",
+    "name": "Choco Cold Coffee — Large (350 ml)",
+    "price": 219.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-45",
+    "category": "Cold Coffee",
+    "name": "Oreo Cold Coffee — Medium",
+    "price": 179.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-46",
+    "category": "Cold Coffee",
+    "name": "Oreo Cold Coffee — Large",
+    "price": 219.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-47",
+    "category": "Cold Coffee",
+    "name": "Dark Chocolate Cold Coffee — Medium (250 ml)",
+    "price": 189.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-48",
+    "category": "Cold Coffee",
+    "name": "Dark Chocolate Cold Coffee — Large (350 ml)",
+    "price": 229.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-49",
+    "category": "Shakes",
+    "name": "Strawberry Shake — Medium (250 ml)",
+    "price": 169.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-50",
+    "category": "Shakes",
+    "name": "Strawberry Shake — Large (350 ml)",
+    "price": 209.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-51",
+    "category": "Shakes",
+    "name": "Mango Shake — Medium (250 ml)",
+    "price": 169.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-52",
+    "category": "Shakes",
+    "name": "Mango Shake — Large (350 ml)",
+    "price": 209.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-53",
+    "category": "Shakes",
+    "name": "Blueberry Shake — Medium (250 ml)",
+    "price": 179.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-54",
+    "category": "Shakes",
+    "name": "Blueberry Shake — Large (350 ml)",
+    "price": 219.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-55",
+    "category": "Shakes",
+    "name": "Oreo Shake — Medium (250 ml)",
+    "price": 169.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-56",
+    "category": "Shakes",
+    "name": "Oreo Shake — Large (350 ml)",
+    "price": 209.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-57",
+    "category": "Shakes",
+    "name": "Mango Berry Shake — Medium (250 ml)",
+    "price": 189.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-58",
+    "category": "Shakes",
+    "name": "Mango Berry Shake — Large (350 ml)",
+    "price": 229.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-59",
+    "category": "Shakes",
+    "name": "Mango Oreo Shake — Medium (250 ml)",
+    "price": 189.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-60",
+    "category": "Shakes",
+    "name": "Mango Oreo Shake — Large (350 ml)",
+    "price": 229.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-61",
+    "category": "Shakes",
+    "name": "KitKat Shake — Medium (250 ml)",
+    "price": 189.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-62",
+    "category": "Shakes",
+    "name": "KitKat Shake — Large (350 ml)",
+    "price": 229.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-63",
+    "category": "Shakes",
+    "name": "Dark Chocolate Shake — Medium (250 ml)",
+    "price": 179.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-64",
+    "category": "Shakes",
+    "name": "Dark Chocolate Shake — Large (350 ml)",
+    "price": 219.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-65",
+    "category": "Ice Cream",
+    "name": "Vanilla Ice Cream (1 Scoop) — Listing 1",
+    "price": 30.0,
+    "tax": 0.0,
+    "available": true
+  },
+  {
+    "id": "item-66",
+    "category": "Ice Cream",
+    "name": "Chocolate Ice Cream (1 Scoop) — Listing 1",
+    "price": 40.0,
+    "tax": 0.0,
+    "available": true
+  },
+  {
+    "id": "item-67",
+    "category": "Ice Cream",
+    "name": "Chocolate Ice Cream (1 Scoop) — Listing 2",
+    "price": 70.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-68",
+    "category": "Ice Cream",
+    "name": "Vanilla Ice Cream (1 Scoop) — Listing 2",
+    "price": 50.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-69",
+    "category": "Extras",
+    "name": "Extra Dip",
+    "price": 20.0,
+    "tax": 0.0,
+    "available": true
+  },
+  {
+    "id": "item-70",
+    "category": "Extras",
+    "name": "Extra Cheese",
+    "price": 30.0,
+    "tax": 0.0,
+    "available": true
+  },
+  {
+    "id": "item-71",
+    "category": "Extras",
+    "name": "Extra Mayonnaise Dip",
+    "price": 20.0,
+    "tax": 0.0,
+    "available": true
+  },
+  {
+    "id": "item-72",
+    "category": "Extras",
+    "name": "Extra Chatni",
+    "price": 20.0,
+    "tax": 0.0,
+    "available": true
+  },
+  {
+    "id": "item-73",
+    "category": "Extras",
+    "name": "Extra Tikki",
+    "price": 40.0,
+    "tax": 0.0,
+    "available": true
+  },
+  {
+    "id": "item-74",
+    "category": "Pizza",
+    "name": "OTC Pizza",
+    "price": 449.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-75",
+    "category": "Pizza",
+    "name": "Sweet Corn Cheese Pizza",
+    "price": 479.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-76",
+    "category": "Pizza",
+    "name": "Paneer Cheese Pizza",
+    "price": 549.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-77",
+    "category": "Pizza",
+    "name": "Tandoori Paneer Pizza",
+    "price": 549.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-78",
+    "category": "Pizza",
+    "name": "Onion Pizza",
+    "price": 419.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-79",
+    "category": "Pizza",
+    "name": "Classic Margherita Pizza (8 inch)",
+    "price": 379.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-80",
+    "category": "Pizza",
+    "name": "Capsicum Pizza (8 inches)",
+    "price": 419.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-81",
+    "category": "Pizza",
+    "name": "Tomato Pizza (8 Inch)",
+    "price": 419.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-82",
+    "category": "Other Drinks",
+    "name": "Hot Chocolate",
+    "price": 340.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-83",
+    "category": "Other Drinks",
+    "name": "Water Bottle (500 ml)",
+    "price": 30.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-84",
+    "category": "Other Drinks",
+    "name": "Pepsi (250 ml)",
+    "price": 20.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-85",
+    "category": "Other Drinks",
+    "name": "Iced Latte — Medium",
+    "price": 149.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-86",
+    "category": "Other Drinks",
+    "name": "Iced Latte — Large",
+    "price": 189.0,
+    "tax": 5.0,
+    "available": true
+  },
+  {
+    "id": "item-87",
+    "category": "Combos",
+    "name": "French Fries with Cold Coffee",
+    "price": 378.0,
+    "tax": 5.0,
+    "available": true
+  }
+]
